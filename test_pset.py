@@ -5,7 +5,7 @@ from io import StringIO
 from time import sleep, time
 from unittest import TestCase, main
 
-from fibonacci import SummableSequence, last_8, optimized_fibonacci
+from fibonacci import last_8
 from pyramid import print_pyramid
 
 try:
