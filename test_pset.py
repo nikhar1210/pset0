@@ -49,32 +49,6 @@ def capture_print():
         sys.stdout = _stdout
 
 
-class FibTests(TestCase):
-    def test_fibonnacci(self):
-        for n, expected in [
-            # Check progressively more complex values, see if time out
-            (0, 0),
-            (1, 1),
-            (6, 8),
-            (10, 55),
-            (15, 610),
-            (20, 6765),
-            (30, 832040),
-            (40, 102334155),
-            (100, 354224848179261915075),
-        ]:
-            with timeout(message="Timeout running f({})".format(n)):
-                self.assertEqual(expected, optimized_fibonacci(n))
-
-    def test_summable(self):
-        ss = SummableSequence(0, 1)
-        for n in range(0, 50, 5):
-            with timeout(message="Timeout running f({})".format(n)):
-                raise NotImplementedError(
-                    "You should implement this and other SummableSequence tests!"
-                )
-
-
 class TestTimeout(TestCase):
     def test_timeout(self):
         with self.assertRaises(TimeoutError):

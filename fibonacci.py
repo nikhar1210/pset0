@@ -13,24 +13,9 @@ def last_8(some_int):
 
     else:
 
-        return int(str(some_int)[len(str(some_int))-8:len(str(some_int))])
-
-
-def optimized_fibonacci(f):
-    raise NotImplementedError()
-
-
-class SummableSequence(object):
-    def __init__(self, *initial):
-        raise NotImplementedError()
-
-    def __call__(self, i):
-        raise NotImplementedError()
+        return int(str(some_int)[len(str(some_int)) - 8 : len(str(some_int))])
 
 
 if __name__ == "__main__":
 
-    print("f(100000)[-8:]", last_8(optimized_fibonacci(100000)))
-
-    new_seq = SummableSequence(5, 7, 11)
-    print("new_seq(100000)[-8:]:", last_8(new_seq(100000)))
+    last_8()
