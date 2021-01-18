@@ -14,7 +14,7 @@ def last_8(some_int):
 
     else:
 
-        return print(int(str(some_int)[len(str(some_int)) - 8: len(str(some_int))]))
+        return int(str(some_int)[len(str(some_int)) - 8: len(str(some_int))])
 
 
 if __name__ == "__main__":
