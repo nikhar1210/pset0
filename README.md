@@ -7,9 +7,9 @@ Replace the below with your own build badges:
 
 [![Build Status](https://travis-ci.com/nikhar1210/pset0.svg?branch=master)](https://travis-ci.com/nikhar1210/pset0)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/aaaaa/maintainability)](https://codeclimate.com/repos/aaaaa/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/676186e814d2660feeca/maintainability)](https://codeclimate.com/github/nikhar1210/pset0/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/aaaaa/test_coverage)](https://codeclimate.com/repos/aaaaa/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/676186e814d2660feeca/test_coverage)](https://codeclimate.com/github/nikhar1210/pset0/test_coverage)
 
 ## Objectives
 
