@@ -17,6 +17,14 @@ def print_pyramid(rows):
 
     :param int rows: total height
     """
+    # Adding exception handeling
+
+    if not isinstance(rows, int):
+        raise TypeError
+
+    if rows < 0:
+        raise ValueError
+
     # Calculating total number of '=' signs required
     k = 2 * rows - 1
 
@@ -42,7 +50,7 @@ def print_pyramid(rows):
         # Print change of line at the end of row
         print(end="\n")
 
-        # Reduce value of k by 2 as it is corresponsding to number of '-' which decreasing in each subsequent row
+        # Reduce value of k by 2 as it is corresponding to number of '-' which decreasing in each subsequent row
         k = k - 2
 
 

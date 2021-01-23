@@ -5,7 +5,7 @@ from io import StringIO
 from time import sleep, time
 from unittest import TestCase, main
 
-from fibonacci import last_8
+from fibonacci import SummableSequence, last_8, optimized_fibonacci
 from pyramid import print_pyramid
 
 try:
@@ -47,6 +47,54 @@ def capture_print():
         yield sys.stdout
     finally:
         sys.stdout = _stdout
+
+
+class FibTests(TestCase):
+    def test_fibonnacci(self):
+        for n, expected in [
+            # Check progressively more complex values, see if time out
+            (0, 0),
+            (1, 1),
+            (6, 8),
+            (10, 55),
+            (15, 610),
+            (20, 6765),
+            (30, 832040),
+            (40, 102334155),
+            (100, 354224848179261915075),
+        ]:
+            with timeout(message="Timeout running f({})".format(n)):
+                self.assertEqual(expected, optimized_fibonacci(n))
+
+    def test_summable(self):
+        ss = SummableSequence(0, 1)
+        for n in range(0, 50, 5):
+            with timeout(message="Timeout running f({})".format(n)):
+                self.assertEqual(ss(n), optimized_fibonacci(n))
+
+        # test on new seq
+        new_seq = SummableSequence(5, 7, 11)
+        for n, expected in [
+            # Check progressively more complex values, see if time out
+            (0, 5),
+            (1, 7),
+            (2, 11),
+            (3, 23),
+            (4, 41),
+            (5, 75),
+            (20, 703209),
+            (21, 1293403),
+            (22, 2378939),
+            (23, 4375551),
+            (24, 8047893),
+            (25, 14802383),
+            (26, 27225827),
+            (27, 50076103),
+            (28, 92104313),
+            (29, 169406243),
+        ]:
+            with timeout(message="Timeout running f({})".format(n)):
+                self.assertEqual(expected, new_seq(n))
 
 
 class TestTimeout(TestCase):
